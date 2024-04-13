@@ -69,7 +69,7 @@ public class UserResource {
 		return ResponseEntity.noContent().build();
 	}
 	
-	@GetMapping(value = "{id}/posts")
+	@GetMapping(value = "/{id}/posts")
 	public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
 		User obj = userservice.findById(id);
 		return ResponseEntity.ok().body(obj.getPosts());
